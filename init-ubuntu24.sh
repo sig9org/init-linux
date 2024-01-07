@@ -54,10 +54,19 @@ apt -y install \
     curl \
     fping \
 	git \
+	neovim \
     nmap \
     tree \
     unzip \
     zip
+
+# NeoVim settings
+cat << 'EOF' >> ~/.bashrc
+
+# NeoVim settings
+alias vi="nvim"
+alias vim="nvim"
+EOF
 
 # Update system
 apt -y upgrade
@@ -99,6 +108,11 @@ direnv allow
 EOF
 chmod 755 /usr/local/bin/venv
 
+# Install golang
+asdf plugin add golang
+asdf install golang 1.21.5
+asdf global golang 1.21.5
+
 # Install Python
 apt -y install \
   build-essential \
@@ -118,6 +132,11 @@ apt -y install \
 asdf plugin add python
 asdf install python 3.12.1
 asdf global python 3.12.1
+
+# Install Terraform
+asdf plugin add terraform
+asdf install terraform 1.6.6
+asdf global terraform 1.6.6
 
 # Reboot
 dt_end=$( date +"%s" )
