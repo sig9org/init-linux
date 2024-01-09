@@ -86,6 +86,8 @@ EOF
 . "$HOME/.asdf/asdf.sh"
 . "$HOME/.asdf/completions/asdf.bash"
 
+asdf update
+
 # Install direnv
 asdf plugin add direnv
 asdf install direnv 2.33.0
