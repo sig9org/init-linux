@@ -143,6 +143,30 @@ asdf plugin add terraform
 asdf install terraform 1.6.6
 asdf global terraform 1.6.6
 
+# Install Docker
+apt-get -y remove docker docker-engine docker.io containerd runc
+apt-get update
+apt-get -y install ca-certificates curl gnupg
+install -m 0755 -d /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+chmod a+r /etc/apt/keyrings/docker.gpg
+echo \
+  "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
+  tee /etc/apt/sources.list.d/docker.list > /dev/null
+apt-get update
+apt-get -y install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+mkdir -p /usr/local/lib/docker/cli-plugins/
+curl -SL https://github.com/docker/compose/releases/download/v2.23.0/docker-compose-linux-x86_64 -o /usr/local/lib/docker/cli-plugins/docker-compose
+chmod +x /usr/local/lib/docker/cli-plugins/docker-compose
+
+mkdir -p /usr/local/lib/docker/cli-plugins/
+curl -SL \
+  https://github.com/sig9org/docker-purge/releases/download/v0.0.1/docker-purge_v0.0.1_linux_amd64 \
+  -o /usr/local/lib/docker/cli-plugins/docker-purge
+chmod +x /usr/local/lib/docker/cli-plugins/docker-purge
+
 # Reboot
 dt_end=$( date +"%s" )
 elapsed=$((dt_end - dt_start))
