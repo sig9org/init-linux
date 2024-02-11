@@ -159,7 +159,7 @@ apt-get -y install docker-ce docker-ce-cli containerd.io docker-buildx-plugin do
 
 # Install docker compose
 mkdir -p /usr/local/lib/docker/cli-plugins/
-curl -SL https://github.com/docker/compose/releases/download/v2.45.5/docker-compose-linux-x86_64 -o /usr/local/lib/docker/cli-plugins/docker-compose
+curl -SL https://github.com/docker/compose/releases/download/v2.24.5/docker-compose-linux-x86_64 -o /usr/local/lib/docker/cli-plugins/docker-compose
 chmod +x /usr/local/lib/docker/cli-plugins/docker-compose
 
 # Install docker purge
