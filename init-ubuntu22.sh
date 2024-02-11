@@ -76,7 +76,7 @@ curl -L https://github.com/sig9org/uncmnt/releases/download/v0.0.2/uncmnt_v0.0.2
 chmod 755 /usr/local/bin/uncmnt
 
 # Install asdf
-git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.13.1
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.0
 cat << 'EOF' >> ~/.bashrc
 
 # asdf settings
@@ -112,8 +112,8 @@ chmod 755 /usr/local/bin/venv
 
 # Install golang
 asdf plugin add golang
-asdf install golang 1.21.5
-asdf global golang 1.21.5
+asdf install golang 1.22.0
+asdf global golang 1.22.0
 
 # Install Python
 apt -y install \
@@ -135,13 +135,13 @@ apt -y install \
   xz-utils \
   zlib1g-dev
 asdf plugin add python
-asdf install python 3.12.1
-asdf global python 3.12.1
+asdf install python 3.12.2
+asdf global python 3.12.2
 
 # Install Terraform
 asdf plugin add terraform
-asdf install terraform 1.6.6
-asdf global terraform 1.6.6
+asdf install terraform 1.7.3
+asdf global terraform 1.7.3
 
 # Install Docker
 apt-get -y remove docker docker-engine docker.io containerd runc
@@ -157,10 +157,12 @@ echo \
 apt-get update
 apt-get -y install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
+# Install docker compose
 mkdir -p /usr/local/lib/docker/cli-plugins/
-curl -SL https://github.com/docker/compose/releases/download/v2.23.0/docker-compose-linux-x86_64 -o /usr/local/lib/docker/cli-plugins/docker-compose
+curl -SL https://github.com/docker/compose/releases/download/v2.45.5/docker-compose-linux-x86_64 -o /usr/local/lib/docker/cli-plugins/docker-compose
 chmod +x /usr/local/lib/docker/cli-plugins/docker-compose
 
+# Install docker purge
 mkdir -p /usr/local/lib/docker/cli-plugins/
 curl -SL \
   https://github.com/sig9org/docker-purge/releases/download/v0.0.1/docker-purge_v0.0.1_linux_amd64 \
