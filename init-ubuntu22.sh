@@ -140,8 +140,8 @@ asdf global python 3.12.2
 
 # Install Terraform
 asdf plugin add terraform
-asdf install terraform 1.7.3
-asdf global terraform 1.7.3
+asdf install terraform 1.7.4
+asdf global terraform 1.7.4
 
 # Install Docker
 apt-get -y remove docker docker-engine docker.io containerd runc
