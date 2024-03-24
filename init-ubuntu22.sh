@@ -112,8 +112,8 @@ chmod 755 /usr/local/bin/venv
 
 # Install golang
 asdf plugin add golang
-asdf install golang 1.22.0
-asdf global golang 1.22.0
+asdf install golang 1.22.1
+asdf global golang 1.22.1
 
 # Install Python
 apt -y install \
@@ -140,8 +140,8 @@ asdf global python 3.12.2
 
 # Install Terraform
 asdf plugin add terraform
-asdf install terraform 1.7.4
-asdf global terraform 1.7.4
+asdf install terraform 1.7.5
+asdf global terraform 1.7.5
 
 # Install Docker
 apt-get -y remove docker docker-engine docker.io containerd runc
@@ -159,7 +159,7 @@ apt-get -y install docker-ce docker-ce-cli containerd.io docker-buildx-plugin do
 
 # Install docker compose
 mkdir -p /usr/local/lib/docker/cli-plugins/
-curl -SL https://github.com/docker/compose/releases/download/v2.24.6/docker-compose-linux-x86_64 -o /usr/local/lib/docker/cli-plugins/docker-compose
+curl -SL https://github.com/docker/compose/releases/download/v2.26.0/docker-compose-linux-x86_64 -o /usr/local/lib/docker/cli-plugins/docker-compose
 chmod +x /usr/local/lib/docker/cli-plugins/docker-compose
 
 # Install docker purge
